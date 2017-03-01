@@ -175,7 +175,11 @@
   color: @tweak-header-branding-site-title-color;
 }
 .has-site-title .Header--overlay .Header-branding { color: @tweak-header-overlay-branding-site-title-color; }
-.Header-branding-logo { max-width: @tweak-header-logo-width; }
+.Header-branding-logo {
+  max-width: @tweak-header-logo-width;
+  position: relative;
+  left: -30px;
+ }
 
 
 
@@ -431,7 +435,7 @@
 }
 
 .Header-nav {
-  font-family: 'moonlight', sans-serif; 
+  font-family: 'moonlight', sans-serif;
 }
 .tweak-header-primary-nav-hover-style-plain {
   .Header-nav {
