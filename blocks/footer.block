@@ -6,14 +6,14 @@
 
     <div class="Footer-middle">
 
-      <div class="primary-footer-nav">
+      <div class="footer-nav-wrapper footer-nav-wrapper-primary">
         <squarespace:navigation navigationId="mainNavigation" template="footer-nav" />
       </div>
 
-      <div class="secondary-footer-nav">
+      <div class="footer-nav-wrapper footer-nav-wrapper-secondary">
         <squarespace:navigation navigationId="footerMainNavigation" template="footer-nav" />
       </div>
-      
+
       <div class="Footer-business">
 
         {.if website.location.addressTitle || website.location.addressLine1 || website.location.addressLine2 || websiteSettings.contactPhoneNumber || websiteSettings.contactEmail}

@@ -124,6 +124,11 @@
 
   &-nav {
 
+    &-group {
+      display: flex;
+      flex-direction: column;
+    }
+
     // Typography
     .tweak-footer-nav-font;
     a { .link-color(@tweak-footer-nav-color); }
@@ -247,6 +252,7 @@
 
       .flex-parent();
       .flex-direction(row);
+      justify-content: space-between;
     }
 
     // Paddings
