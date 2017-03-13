@@ -14,9 +14,8 @@
         <squarespace:navigation navigationId="footerMainNavigation" template="footer-nav" />
       </div>
 
-      <div class="Footer-business">
-
-        {.if website.location.addressTitle || website.location.addressLine1 || website.location.addressLine2 || websiteSettings.contactPhoneNumber || websiteSettings.contactEmail}
+      {.if website.location.addressTitle || website.location.addressLine1 || website.location.addressLine2 || websiteSettings.contactPhoneNumber || websiteSettings.contactEmail}
+        <div class="Footer-business">
           <div class="Footer-business-info">
             {.section website}
               {.section location}
@@ -31,7 +30,8 @@
               {.section contactEmail}<a href="mailto:{@}" title="{@}" target="_blank" class="Footer-business-info-item Footer-business-info-item--email">{@}</a>{.end}
             {.end}
           </div>
-        {.end}
+        </div>
+      {.end}
 
         {.section websiteSettings}
           {.section businessHours}
@@ -47,8 +47,6 @@
             </div>
           {.end}
         {.end}
-
-      </div>
 
       <squarespace:block-field id="footerBlocksMiddle" class="Footer-blocks Footer-blocks--middle sqs-alternate-block-style-container" columns="12" label="Footer Middle Blocks" />
 
