@@ -15,7 +15,7 @@
 
       {.end}
 
-    </div><div class="Footer-nav-group">{.or}{.section collection}<a href="{fullUrl}" class="Footer-nav-item">{navigationTitle}</a>{.end}{.end}{.end}{.section externalLink}<a href="{url}"{.section newWindow} target="_blank"{.end} class="Footer-nav-item">{title}</a>{.end}{.end}</div>
+    </div><div class="Footer-nav-group">{.or}{.section collection}<a href="{fullUrl}" class="Footer-nav-item">{navigationTitle}</a>{.end}{.end}{.end}{.section externalLink}<a href="{url}"{.section newWindow} target="_blank"{.end} class="Footer-nav-item footer-nav-{title|slugify}">{title}</a>{.end}{.end}</div>
 
   </nav>
 {.end}
