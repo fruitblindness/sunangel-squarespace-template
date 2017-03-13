@@ -197,6 +197,24 @@
 
     }
 
+    &#features .sqs-row {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      .sqs-col-4 {
+        flex: 1 1 33.3%;
+        width: auto;
+        float: none;
+        display: flex;
+        flex-direction: column;
+
+        .sqs-block-button {
+          margin-top: auto;
+        }
+      }
+    }
+
     &:first-of-type + .Index-page {
       position: relative;
       overflow: visible;
