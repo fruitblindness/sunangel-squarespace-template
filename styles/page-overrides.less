@@ -1,0 +1,26 @@
+.homepage {
+    .Index-page:first-of-type + .Index-page {
+        position: relative;
+        overflow: visible;
+
+        &:before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 100px;
+        background: linear-gradient(to bottom, rgba(red(@dark-blue), green(@dark-blue), blue(@dark-blue), 0) 0%, rgba(red(@dark-blue), green(@dark-blue), blue(@dark-blue), 1) 100%);
+        position: absolute;
+        top: -100px;
+        }
+    }
+}
+
+.products {
+    .Index-page-content {
+        padding-bottom: 0;
+
+        &:nth-of-type(n+1) {
+            padding-top: 0;
+        }
+    }
+}
