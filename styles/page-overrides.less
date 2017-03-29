@@ -16,11 +16,9 @@
 }
 
 .products {
-    .Index-page-content {
-        padding-bottom: 0;
-
-        &:nth-of-type(n+1) {
-            padding-top: 0;
-        }
+    .Index-page:not(:last-of-type) {
+      .Index-page-content {
+          padding-bottom: 0;
+      }
     }
 }
