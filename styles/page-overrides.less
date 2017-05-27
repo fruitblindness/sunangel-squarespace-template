@@ -31,3 +31,18 @@
       }
     }
 }
+
+body:not(.homepage) {
+  .Header-inner:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0px;
+    width: 139px;
+    height: 217px;
+    background: url('/assets/furniture_spatter.png') 0 0 no-repeat;
+    background-size: contain;
+    z-index: 9;
+  }
+}
