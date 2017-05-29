@@ -33,6 +33,24 @@
     .ProductItem-gallery-slides-item {
       padding: 5px;
       border: white 3px solid;
+      overflow: visible;
+
+      .ProductItem-gallery-slides-item-image {
+        position: relative;
+      }
+
+      &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 498px;
+        height: 442px;
+        background: url('/assets/product_spatter.png') 0 0 no-repeat;
+        background-size: cover;
+        z-index: 0;
+      }
     }
 }
 
@@ -42,7 +60,7 @@ body:not(.homepage) {
     display: block;
     position: absolute;
     top: 0;
-    right: 0px;
+    right: 0;
     width: 139px;
     height: 217px;
     background: url('/assets/furniture_spatter.png') 0 0 no-repeat;
