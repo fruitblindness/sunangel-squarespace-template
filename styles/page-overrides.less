@@ -30,6 +30,11 @@
           padding-bottom: 0;
       }
     }
+
+    .Main-content {
+      padding-top: 50px;
+    }
+
     .ProductItem-gallery-slides-item {
       padding: 5px;
       border: white 3px solid;
@@ -55,16 +60,19 @@
 }
 
 body:not(.homepage) {
-  .Header-inner:before {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 139px;
-    height: 217px;
-    background: url('/assets/furniture_spatter.png') 0 0 no-repeat;
-    background-size: contain;
-    z-index: 9;
+  .Header-inner {
+    overflow: visible;
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 139px;
+      height: 217px;
+      background: url('/assets/furniture_spatter.png') 0 0 no-repeat;
+      background-size: contain;
+      z-index: 9;
+    }
   }
 }
