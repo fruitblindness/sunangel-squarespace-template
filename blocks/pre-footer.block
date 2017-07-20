@@ -1,0 +1,9 @@
+<div class="pre-footer" role="contentinfo" data-controller="FooterBreakpoints">
+
+  <div class="pre-footer-inner clear">
+
+    <squarespace:block-field id="preFooterBlocks" class="pre-footer-blocks sqs-alternate-block-style-container" columns="12" label="Pre Footer Blocks" />
+
+  </div>
+
+</div>

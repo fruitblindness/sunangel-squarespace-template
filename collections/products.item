@@ -1,0 +1,57 @@
+{.section item}
+
+<div id="productWrapper" class="product ProductItem {@|item-classes}" data-item-id="{id}">
+
+  <div class="ProductItem-nav"><a href="{collection.fullUrl}"><span class="back-arrow">&larr;</span> Back to {collection.title}</a></div>
+
+  <div class="ProductItem-summary clear">
+
+    <section class="ProductItem-details ProductItem-details--mobile">
+      <h1 class="ProductItem-details-title" data-content-field="title">{title}</h1>
+    </section>
+
+    <div class="ProductItem-gallery">
+      <div class="intrinsic"><div class="wrapper">
+      <div class="ProductItem-gallery-slides">
+        {.repeated section items}
+          {.image?}
+            <div class="ProductItem-gallery-slides-item"><img data-load="false" {@|image-meta} /><div class=""></div></div>
+          {.end}
+          {.video?}
+            {@|video}
+          {.end}
+        {.end}
+      </div>
+      </div></div>
+      <div class="ProductItem-gallery-thumbnails">
+        {.repeated section items}<div class="slide content-fill"><img {@|image-meta} /></div>{.end}
+      </div>
+    </div>
+
+
+    <div class="ProductItem-details">
+      {@|product-status}
+
+      <h1 class="ProductItem-details-title" data-content-field="title">{title}</h1>
+
+      {@|product-price}
+
+      {.excerpt?}<div class="ProductItem-details-excerpt" data-content-field="excerpt">{excerpt}</div>{.end}
+
+      {@|product-checkout}
+
+      <div> butts </div>
+
+      <div class="ProductItem-details-share">{@|social-button-inline}</div>
+    </div>
+  </div>
+
+    {.section body}
+      <div class="product-description">
+        {@}
+      </div>
+    {.end}
+
+</div>
+
+{.end}
