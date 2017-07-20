@@ -2,7 +2,7 @@
 
   <div class="pre-footer-inner clear">
 
-    <squarespace:block-field id="preFooterBlocks" class="pre-footer-blocks sqs-alternate-block-style-container" columns="12" label="Pre Footer Blocks" />
+    <squarespace:block-field id="preFooterBlocks-{collection.title}" class="pre-footer-blocks sqs-alternate-block-style-container" columns="12" label="Pre Footer Blocks" />
 
   </div>
 

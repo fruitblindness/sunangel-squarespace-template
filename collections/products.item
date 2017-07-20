@@ -38,9 +38,14 @@
 
       {.excerpt?}<div class="ProductItem-details-excerpt" data-content-field="excerpt">{excerpt}</div>{.end}
 
-      {@|product-checkout}
-
-      <div> butts </div>
+      <div class="customer-journeys">
+        <div>
+          {@|product-checkout}
+        </div>
+        <div>
+          <squarespace:block-field id="customerJourneyBlock" class="customer-journey-block sqs-alternate-block-style-container" columns="12" label="Customer Journey Blocks" />
+        </div>
+      </div>
 
       <div class="ProductItem-details-share">{@|social-button-inline}</div>
     </div>
