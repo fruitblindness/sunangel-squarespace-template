@@ -20,6 +20,17 @@
 }
 
 .products {
+
+    .intros {
+      .intro {
+        display: none;
+
+        &.visible {
+          display: block;
+        }
+      }
+    }
+
     .Index-page-content {
         .summary-item {
             margin-bottom: 0 !important;
@@ -61,7 +72,7 @@
         left: 0;
         width: 498px;
         height: 442px;
-        background: url('/assets/product_spatter.png') 0 0 no-repeat;
+        // background: url('/assets/product_spatter.png') 0 0 no-repeat;
         background-size: cover;
         z-index: 0;
       }
