@@ -15,7 +15,7 @@
       <div class="ProductItem-gallery-slides">
         {.repeated section items}
           {.image?}
-            <div class="ProductItem-gallery-slides-item"><img data-load="false" {@|image-meta} /><div class=""></div></div>
+            <div class="ProductItem-gallery-slides-item"><img data-load="true" {@|image-meta} /><div class=""></div></div>
           {.end}
           {.video?}
             {@|video}
@@ -45,9 +45,10 @@
         <div>
           <squarespace:block-field id="customerJourneyBlock-{item.title}" class="customer-journey-block sqs-alternate-block-style-container" columns="6" label="Customer Journey Blocks" />
         </div>
+        <div>
+          <div class="ProductItem-details-share">{@|social-button-inline}</div>
+        </div>
       </div>
-
-      <div class="ProductItem-details-share">{@|social-button-inline}</div>
     </div>
   </div>
 
