@@ -43,7 +43,7 @@
           {@|product-checkout}
         </div>
         <div>
-          <squarespace:block-field id="customerJourneyBlock-{item.title}" class="customer-journey-block sqs-alternate-block-style-container" columns="6" label="Customer Journey Blocks" />
+          <squarespace:block-field id="customerJourneyBlock-{item.title}" class="customer-journey-block sqs-alternate-block-style-container" columns="12" label="Customer Journey Blocks" />
         </div>
         <div>
           <div class="ProductItem-details-share">{@|social-button-inline}</div>

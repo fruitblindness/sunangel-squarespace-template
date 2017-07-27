@@ -1,1 +1,19 @@
 @dark-blue: #22313F;
+
+.sqs-block-button-element--small {
+  border-radius: 30px;
+  padding-right: 40px !important;
+  position: relative;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20px;
+    height: 6px;
+    width: 6px;
+    background: #00adb5;
+    border-radius: 50%;
+  }
+}

@@ -30,6 +30,11 @@
       }
     }
 
+    .Main--products-list {
+      position: relative;
+      z-index: 99;
+    }
+
     .Intro-content {
       padding-bottom: 0;
 
@@ -105,10 +110,31 @@
     }
 
     .ProductItem-details {
+
+      .ProductItem-details-title {
+        font-family: 'Antic';
+      }
+
       .customer-journeys {
         order: 5;
         display: flex;
         justify-content: flex-start;
+
+        .sqs-add-to-cart-button {
+          .sqs-block-button-element--small;
+          border-radius: 20px 0 0 20px;
+          opacity: 1;
+          color: white;
+          font-family: 'Karla';
+          border: 2px solid white;
+          padding: 15px 20px 18px;
+        }
+
+        div:nth-child(2) {
+          .sqs-block-button-element--small {
+            border-radius: 0 20px 20px 0;
+          }
+        }
       }
     }
 
