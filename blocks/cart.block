@@ -1,5 +1,5 @@
 {.if showCart}
-  <a href="{shoppingCart|cart-url}" class="Cart {squarespace.cart-classes}" data-nc-element="cart" data-test="template-cart">
+  <a href="{shoppingCart|cart-url}" class="Cart {squarespace.cart-classes}" data-test="template-cart">
     <span class="Cart-inner">
       <span class="Cart-label"></span>
 
