@@ -8,7 +8,6 @@
 @footer-spacing: 20px;
 
 .pre-footer {
-
   // Background
   background-color: #F2F2F2;
   .font-smoothing(@tweak-footer-color);
@@ -22,6 +21,21 @@
 
 
   &-inner {
+    background-color: #F2F2F2;
+    position: relative;
+
+    &:before {
+      content: '';
+      background: url(/assets/pre-footer.svg) 50% 100% no-repeat;
+      background-size: contain;
+      width: 100%;
+      height: 60px;
+      display: block;
+      left: 0;
+      transform: scaleX(-1);
+      position: absolute;
+      top: -58px;
+    }
 
     .border-box;
 
