@@ -234,7 +234,12 @@ body:not(.homepage) {
     content: '';
     display: block;
     height: 1px;
-    background: #f2f2f2;
+    background: linear-gradient(
+      to left,
+      rgba(red(#f2f2f2), green(#f2f2f2), blue(#f2f2f2), 0) 0%,
+      rgba(red(#f2f2f2), green(#f2f2f2), blue(#f2f2f2), 0.6) 50%,
+      rgba(red(#f2f2f2), green(#f2f2f2), blue(#f2f2f2), 0) 100%
+      );
     position: absolute;
     top: 50%;
     width: 100%;

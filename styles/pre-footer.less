@@ -51,14 +51,21 @@
 
     &.empty { padding: 0 !important; }
 
-    color: @tweak-footer-body-text-color;
+    color: @dark-blue;
+
     .mixin-template-heading-color(@tweak-footer-h1-color, @tweak-footer-h2-color, @tweak-footer-h3-color);
     .mixin-template-link-color(@tweak-footer-link-color);
     .mixin-template-line-color(@tweak-footer-line-color);
 
-    padding: (@tweak-footer-padding / 3) @tweak-site-side-padding;
+    padding: (@tweak-footer-padding / 2) @tweak-site-side-padding;
     .responsive-padding-vertical(@tweak-footer-padding);
     .responsive-padding-horizontal(@tweak-site-side-padding);
+
+    h1, h2, h3, h4, h5, h6 {
+      color: @dark-blue;
+      line-height: 1;
+    }
+
 
   }
 
