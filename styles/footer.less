@@ -155,9 +155,39 @@
 
     }
 
+    @networks: instagram, facebook;
+
+    .social-icons (@index) when (@index > 0) {
+      .social-icons(@index - 1);
+      @network: extract(@networks, @index - 1);
+      .footer-nav-@{network} {
+        position: relative;
+        padding-left: 40px;
+        &:before {
+          content: '';
+          background-image: e(%("url('/assets/%s.png')", @network));
+          background-size: contain;
+          display: block;
+          width: 30px;
+          height: 30px;
+          left: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          position: absolute;
+        }
+      }
+    }
+
+    .social-icons(length(@networks));
+
   }
 
-
+  .footer-nav-wrapper-secondary .Footer-nav-item {
+    padding-bottom: 0;
+    & + .Footer-nav-item {
+      margin-top: 20px;
+    }
+  }
 
 }
 
