@@ -1,6 +1,10 @@
 @dark-blue: #22313F;
 
+.sqs-system-button,
+.sqs-editable-button,
 .sqs-block-button-element--small {
+  &:extend(.small-button-style-outline);
+  &:extend(.sqs-block-button);
   border-radius: 30px;
   padding-right: 40px !important;
   position: relative;
