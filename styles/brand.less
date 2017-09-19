@@ -2,15 +2,23 @@
 
 .sqs-system-button,
 .sqs-editable-button,
+.BlogList-item-readmore,
+.summary-read-more-link,
 .sqs-block-button-element--small {
   .tweak-body-font !important;
   border-color: #fff !important;
+  border: 2px solid;
   background-color: transparent !important;
   color: #fff !important;
+  display: inline-block !important;
   border-radius: 30px !important;
   padding: 13px 40px 13px 26px !important;
   position: relative !important;
   text-transform: uppercase !important;
+
+  > span:after {
+    display: none;
+  }
 
   &:after {
     content: '';
@@ -23,4 +31,15 @@
     background: #00adb5;
     border-radius: 50%;
   }
+}
+
+.pre-footer .summary-read-more-link {
+  border-color: @dark-blue !important;
+  color: @dark-blue !important;
+}
+
+.BlogList-item-readmore.BlogList-item-readmore  {
+  display: block !important;
+  margin-top: 20px;
+  width: 90px;
 }
