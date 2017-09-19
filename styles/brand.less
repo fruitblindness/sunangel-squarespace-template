@@ -5,8 +5,9 @@
 .BlogList-item-readmore,
 .summary-read-more-link,
 .sqs-block-button-element--small {
-  .tweak-body-font !important;
+  font-family: 'Antic' !important;
   border-color: #fff !important;
+  opacity: 1 !important;
   border: 2px solid;
   background-color: transparent !important;
   color: #fff !important;
@@ -36,6 +37,11 @@
 .pre-footer .summary-read-more-link {
   border-color: @dark-blue !important;
   color: @dark-blue !important;
+  padding: 13px 26px !important;
+
+  &:after {
+    display: none;
+  }
 }
 
 .BlogList-item-readmore.BlogList-item-readmore  {
