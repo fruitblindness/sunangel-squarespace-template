@@ -1,4 +1,4 @@
-{.if showCart}
+{.if shoppingCart.entries.0}
   <a href="{shoppingCart|cart-url}" class="Cart {squarespace.cart-classes} Header-nav-item{.if active} Header-nav-item--active{.end}" data-test="template-cart">
     <span class="Cart-inner">
 
