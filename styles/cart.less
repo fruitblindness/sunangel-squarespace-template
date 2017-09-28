@@ -4,8 +4,10 @@
   line-height: 1em;
 
   .Cart-inner {
-    display: block;
+    display: flex;
+    align-items: center;
     position: relative;
+    padding-left: 15px;
   }
   .Cart-label { display: none; }
   .Icon--cart,
@@ -75,6 +77,8 @@
 .cart-title {
   color: #fff;
 }
+
+.Header-nav--primary .Icon--cart-custom { fill: #fff; width: 30px; height: 30px; }
 
 .Header .Cart { .tweak-header-cart-font; }
 .tweak-header-cart-style-text .Header .Cart { .mixin-cart(text, @tweak-header-cart-color, @tweak-header-cart-flag-color, @tweak-header-cart-flag-text-color); }

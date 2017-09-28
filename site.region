@@ -73,11 +73,6 @@
               </div>
             {.end}
           </div>
-          <div data-nc-container="top-right">
-
-            {@|apply cart.block}
-
-          </div>
         </div>
       </header>
 
@@ -88,6 +83,7 @@
             <div data-nc-container="bottom-left">
               <nav class="Header-nav Header-nav--primary" data-nc-element="primary-nav" data-content-field="navigation">
                 <squarespace:navigation navigationId="mainNavigation" template="header-nav" />
+                {@|apply cart.block}
               </nav>
             </div>
             <div data-nc-container="bottom-center">
@@ -105,11 +101,6 @@
 
             </div>
             <div data-nc-container="bottom-right">
-
-              <nav class="Header-nav Header-nav--secondary" data-nc-element="secondary-nav" data-content-field="navigation">
-                <squarespace:navigation navigationId="secondaryNavigation" template="header-nav" />
-              </nav>
-
             </div>
           </div>
         </header>
