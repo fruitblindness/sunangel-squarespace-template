@@ -3,8 +3,10 @@
       position: relative;
       overflow: visible;
 
-      .Index-page-content {
-        padding: @tweak-index-page-padding @tweak-index-page-padding (@tweak-site-side-padding * 1.2);
+      @media screen and (min-width: 1024px) {
+        .Index-page-content {
+          padding: @tweak-index-page-padding @tweak-index-page-padding (@tweak-site-side-padding * 1.2);
+        }
       }
 
       &:before {

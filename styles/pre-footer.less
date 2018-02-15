@@ -413,6 +413,19 @@
     font-size: 17px;
   }
 
+  @media screen and (max-width: 599px) {
+    .summary-item.summary-item.summary-item {
+      display: flex;
+      flex-direction: column;
+      > div[style] {
+        width: auto !important;
+      }
+      .summary-thumbnail-outer-container {
+        display: none;
+      }
+    }
+  }
+
   .summary-thumbnail-container.summary-thumbnail-container.summary-thumbnail-container {
     &.summary-thumbnail-container.summary-thumbnail-container{
       border: 2px solid @dark-blue;
