@@ -68,4 +68,22 @@
 
 </div>
 
+<script>
+
+var galleryItems = document.querySelectorAll('.ProductItem-gallery-slides-item')
+console.log(galleryItems)
+
+galleryItems.forEach(function(item) {
+  item.addEventListener('click', function() { setActiveItem(item) })
+})
+
+function setActiveItem(item) {
+  var activeItem = document.getElementById('activeGalleryItem')
+  var newItem = item.childNodes[0].cloneNode(true)
+  activeItem.replaceChild(newItem, activeItem.childNodes[0])
+  activeItem.removeChild(activeItem.childNodes[1])
+}
+
+</script>
+
 {.end}
