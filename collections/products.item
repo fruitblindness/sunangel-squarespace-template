@@ -11,7 +11,15 @@
     </section>
 
     <div class="ProductItem-gallery">
-      <div class="intrinsic"><div class="wrapper">
+      <div class="intrinsic">
+      <div class="wrapper">
+      <div class="ProductItem-gallery-active" id="activeGalleryItem">
+      {.section items.0}
+        {.image?}
+          <img data-load="true" {@|image-meta} />
+        {.end}
+      {.end}
+      </div>
       <div class="ProductItem-gallery-slides">
         {.repeated section items}
           {.image?}
