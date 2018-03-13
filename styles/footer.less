@@ -147,7 +147,7 @@
     &-folder-heading {
 
       // Display
-      display: none;
+      display: none !important;
 
       // Typography
       .tweak-footer-nav-heading-font;
@@ -287,7 +287,7 @@
       .flex-parent();
       .flex-direction(row);
       justify-content: space-between;
-      align-items: center;
+      align-items: flex-start !important;
       flex-wrap: wrap;
 
       @media screen and (max-width: 768px) {
