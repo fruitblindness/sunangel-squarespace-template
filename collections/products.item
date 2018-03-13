@@ -70,7 +70,7 @@
 
 <script>
 
-window.addEventListener('DOMContentLoaded', fireCallbackOnSQSLoaded())
+fireCallbackOnSQSLoaded()
 
 function fireCallbackOnSQSLoaded() {
   var bodyLoaded = window.Squarespace.afterBodyLoad
@@ -85,6 +85,11 @@ function loadHandler() {
   var variantSelector = document.querySelector('.variant-select-wrapper select')
   createVariantPriceContainer()
   variantSelector.addEventListener('change', resetOrUpdatePrice)
+  var galleryItems = document.querySelectorAll('.ProductItem-gallery-slides-item')
+
+  galleryItems.forEach(function(item) {
+    item.addEventListener('click', function() { setActiveItem(item) })
+  })
 }
 
 function resetOrUpdatePrice() {
@@ -121,8 +126,13 @@ function createVariantPriceContainer() {
   var priceContainer = document.querySelector('.product-price')
   var newContainer = priceContainer.cloneNode(true)
   var firstChild = newContainer.childNodes[0]
-  newContainer.classList += ' product-price-variant'
-  priceContainer.classList += ' product-price-original'
+  if (!newContainer.classList.contains('product-price-variant')) {
+    newContainer.classList.add('product-price-variant')
+  }
+  if (!priceContainer.classList.contains('product-price-original')) {
+    priceContainer.classList.add('product-price-original')
+  }
+
   if (firstChild.nodeType === 3) {
     newContainer.removeChild(firstChild)
   }
@@ -132,17 +142,12 @@ function createVariantPriceContainer() {
 
 function setPrice(price) {
   var variantPriceContainer = document.querySelector('.product-price-variant .sqs-money-native')
-  document.querySelector('.product-price.product-price-variant').style.display = 'block'
-  document.querySelector('.product-price.product-price-original').style.display = 'none'
   variantPriceContainer.textContent = price
+  setTimeout(function() {
+    document.querySelector('.product-price.product-price-variant').style.display = 'block'
+    document.querySelector('.product-price.product-price-original').style.display = 'none'
+  })
 }
-
-var galleryItems = document.querySelectorAll('.ProductItem-gallery-slides-item')
-console.log(galleryItems)
-
-galleryItems.forEach(function(item) {
-  item.addEventListener('click', function() { setActiveItem(item) })
-})
 
 function setActiveItem(item) {
   var activeItem = document.getElementById('activeGalleryItem')
