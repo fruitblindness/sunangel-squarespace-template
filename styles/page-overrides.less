@@ -250,7 +250,7 @@
 
     .ProductItem-gallery-active {
       border: white 2px solid;
-      margin-bottom: 13px;
+      margin-bottom: 11px;
       height: 300px;
       overflow: hidden;
 
@@ -267,6 +267,8 @@
 
     .ProductItem-gallery-slides {
       display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
 
       &:before {
         display: none;
@@ -279,10 +281,7 @@
         height: 80px;
         overflow: hidden;
         cursor: pointer;
-
-        &+.ProductItem-gallery-slides-item {
-          margin-left: 4%;
-        }
+        margin-bottom: 11px !important;
 
         img {
           min-width: 100%;

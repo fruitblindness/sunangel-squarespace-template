@@ -70,6 +70,73 @@
 
 <script>
 
+window.addEventListener('DOMContentLoaded', fireCallbackOnSQSLoaded())
+
+function fireCallbackOnSQSLoaded() {
+  var bodyLoaded = window.Squarespace.afterBodyLoad
+  window.Squarespace.afterBodyLoad = function () {
+  	var result = bodyLoaded.apply(this, arguments);
+    loadHandler();
+    return result;
+  }
+}
+
+function loadHandler() {
+  var variantSelector = document.querySelector('.variant-select-wrapper select')
+  createVariantPriceContainer()
+  variantSelector.addEventListener('change', resetOrUpdatePrice)
+}
+
+function resetOrUpdatePrice() {
+  if (isVariantSelected()) {
+    var price = getPrice()
+    if (price) {
+      return setPrice(price)
+    }
+  } else {
+    resetPrice()
+  }
+}
+
+function resetPrice() {
+  document.querySelector('.product-price.product-price-variant').style.display = 'none'
+  document.querySelector('.product-price.product-price-original').style.display = 'block'
+}
+
+function isVariantSelected() {
+ return !JSON.parse(document.querySelector('.product-variants').getAttribute('data-unselected-options')).length
+}
+
+function getPrice() {
+  var selectedVariant = JSON.parse(document.querySelector('.product-variants').getAttribute('data-selected-variant'))
+  if (selectedVariant) {
+    var price = selectedVariant.onSale ? selectedVariant.salePriceMoney.value : selectedVariant.priceMoney.value
+    return price
+  }
+
+  return null
+}
+
+function createVariantPriceContainer() {
+  var priceContainer = document.querySelector('.product-price')
+  var newContainer = priceContainer.cloneNode(true)
+  var firstChild = newContainer.childNodes[0]
+  newContainer.classList += ' product-price-variant'
+  priceContainer.classList += ' product-price-original'
+  if (firstChild.nodeType === 3) {
+    newContainer.removeChild(firstChild)
+  }
+  newContainer.style.display = 'none'
+  priceContainer.parentNode.insertBefore(newContainer, priceContainer.nextElementSibling)
+}
+
+function setPrice(price) {
+  var variantPriceContainer = document.querySelector('.product-price-variant .sqs-money-native')
+  document.querySelector('.product-price.product-price-variant').style.display = 'block'
+  document.querySelector('.product-price.product-price-original').style.display = 'none'
+  variantPriceContainer.textContent = price
+}
+
 var galleryItems = document.querySelectorAll('.ProductItem-gallery-slides-item')
 console.log(galleryItems)
 
