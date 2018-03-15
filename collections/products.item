@@ -47,13 +47,9 @@
       {.excerpt?}<div class="ProductItem-details-excerpt" data-content-field="excerpt">{excerpt}</div>{.end}
 
       <div class="customer-journeys">
-        <div>
-          {@|product-checkout}
-        </div>
-        <div>
+        {@|product-checkout}
+        <div class="additional-options">
           <squarespace:block-field id="customerJourneyBlock-{item.title}" class="customer-journey-block sqs-alternate-block-style-container" columns="12" label="Customer Journey Blocks" />
-        </div>
-        <div>
           <div class="ProductItem-details-share">{@|social-button-inline}</div>
         </div>
       </div>
@@ -85,7 +81,7 @@ function loadHandler() {
   var variantSelectors = document.querySelectorAll('.variant-select-wrapper select')
   createVariantPriceContainer()
   variantSelectors.forEach(function(selector) {
-    selector..addEventListener('change', resetOrUpdatePrice)
+    selector.addEventListener('change', resetOrUpdatePrice)
   })
   var galleryItems = document.querySelectorAll('.ProductItem-gallery-slides-item')
 
