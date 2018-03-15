@@ -82,9 +82,11 @@ function fireCallbackOnSQSLoaded() {
 }
 
 function loadHandler() {
-  var variantSelector = document.querySelector('.variant-select-wrapper select')
+  var variantSelectors = document.querySelectorAll('.variant-select-wrapper select')
   createVariantPriceContainer()
-  variantSelector.addEventListener('change', resetOrUpdatePrice)
+  variantSelectors.forEach(function(selector) {
+    selector..addEventListener('change', resetOrUpdatePrice)
+  })
   var galleryItems = document.querySelectorAll('.ProductItem-gallery-slides-item')
 
   galleryItems.forEach(function(item) {
