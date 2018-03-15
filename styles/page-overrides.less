@@ -20,6 +20,7 @@
     .summary-item-list.sqs-gallery-design-carousel .summary-item .summary-item-wrapper  {
       display: flex;
       justify-content: center;
+      background: radial-gradient(ellipse at center, rgba(29,38,41,1) 0%,rgba(29,38,41,0) 90%);
 
       .summary-content {
         display: flex;
@@ -129,7 +130,7 @@
 
     .ProductList-item {
       padding: 2px;
-      border: 2px solid white;
+      background: #171d1f;
       box-sizing: border-box;
 
       &.hidden {
@@ -143,8 +144,8 @@
 
     .ProductList-overlay {
       box-sizing: border-box;
-      position: absolute;
-      bottom: 0;
+      // position: absolute;
+      // bottom: 0;
       background: #171d1f;
       padding: 10px;
       z-index: 9;
@@ -163,6 +164,37 @@
         font-weight: 600;
         font-family: 'moonlight';
         font-size: 13px;
+      }
+    }
+
+    .ProductList-grid-subcategory-Printers {
+      > div {
+        display: flex;
+
+        .ProductList-item {
+          flex: 1 1 auto;
+        }
+      }
+    }
+
+    .ProductList-grid-subcategory-Printers {
+      > div {
+        display: flex;
+
+        .ProductList-item {
+          flex: 1 1 auto;
+        }
+      }
+    }
+
+    div[class^="ProductList-grid-subcategory"]:not(.ProductList-grid-subcategory-Printers) {
+      > div {
+        display: flex;
+        flex-wrap: wrap;
+
+        .ProductList-item {
+          flex: 1 1 20%;
+        }
       }
     }
 
