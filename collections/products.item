@@ -90,15 +90,31 @@ function loadHandler() {
   })
 }
 
-function resetOrUpdatePrice() {
+function resetOrUpdatePrice(e) {
   if (isVariantSelected()) {
     var price = getPrice()
     if (price) {
-      return setPrice(price)
+      return setPrice(price, e.target)
     }
   } else {
     resetPrice()
   }
+}
+
+function closest(el, selectors) {
+  var retval = null;
+  var originalEl = el
+  for (i = 0; i < selectors.length; i++) {
+    while (el) {
+      if (el.matches(selectors[i])) {
+        retval = el;
+        break
+      }
+      el = el.parentElement;
+    }
+    el = originalEl
+  }
+  return retval;
 }
 
 function resetPrice() {
@@ -120,6 +136,20 @@ function getPrice() {
   return null
 }
 
+function closest(el, selector, stopSelector) {
+  var retval = null;
+  while (el) {
+    if (el.matches(selector)) {
+      retval = el;
+      break
+    } else if (stopSelector && el.matches(stopSelector)) {
+      break
+    }
+    el = el.parentElement;
+  }
+  return retval;
+}
+
 function createVariantPriceContainer() {
   var priceContainer = document.querySelector('.product-price')
   var newContainer = priceContainer.cloneNode(true)
@@ -138,12 +168,13 @@ function createVariantPriceContainer() {
   priceContainer.parentNode.insertBefore(newContainer, priceContainer.nextElementSibling)
 }
 
-function setPrice(price) {
-  var variantPriceContainer = document.querySelector('.product-price-variant .sqs-money-native')
+function setPrice(price, element) {
+  var princeChanged = closest(element, ['.product-block', '#productWrapper'])
+  var variantPriceContainer = princeChanged.querySelector('.product-price-variant .sqs-money-native')
   variantPriceContainer.textContent = price
   setTimeout(function() {
-    document.querySelector('.product-price.product-price-variant').style.display = 'block'
-    document.querySelector('.product-price.product-price-original').style.display = 'none'
+    princeChanged.querySelector('.product-price.product-price-variant').style.display = 'block'
+    princeChanged.querySelector('.product-price.product-price-original').style.display = 'none'
   })
 }
 
