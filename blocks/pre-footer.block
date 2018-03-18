@@ -1,4 +1,4 @@
-<div class="pre-footer" role="contentinfo" data-controller="FooterBreakpoints">
+<section class="pre-footer" role="contentinfo" data-controller="FooterBreakpoints">
 
   <div class="pre-footer-inner clear">
 
@@ -6,4 +6,4 @@
 
   </div>
 
-</div>
+</section>
