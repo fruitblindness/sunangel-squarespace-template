@@ -7,7 +7,7 @@
     }
 
     .sqs-block-summary-v2 .summary-block-setting-design-carousel .summary-carousel-pager {
-      width: 100%;
+      width: 80%;
       display: flex;
       position: absolute;
       top: 50%;
@@ -15,6 +15,12 @@
       transform: translate(-50%, -50%);
       justify-content: space-between;
       flex-direction: row-reverse;
+
+      > span {
+        border-radius: 30px;
+        padding: 15px;
+        background: rgba(red(#00adb5), green(#00adb5), blue(#00adb5), 0.3)
+      }
     }
 
     .summary-item-list.sqs-gallery-design-carousel .summary-item .summary-item-wrapper  {
