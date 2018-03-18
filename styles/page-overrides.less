@@ -4,17 +4,27 @@
     .sqs-block-summary-v2 .summary-block-setting-design-carousel {
       max-width: 630px;
       margin: 0 auto;
+
+      @media screen and (max-width: 767px) {
+        .sqs-gallery-container {
+          display: flex;
+          flex-direction: column-reverse;
+        }
+      }
     }
 
     .sqs-block-summary-v2 .summary-block-setting-design-carousel .summary-carousel-pager {
-      width: 80%;
+      width: 100%;
       display: flex;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
       justify-content: space-between;
       flex-direction: row-reverse;
+
+      @media screen and (min-width: 768px) {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
 
       > span {
         border-radius: 30px;
@@ -26,13 +36,26 @@
     .summary-item-list.sqs-gallery-design-carousel .summary-item .summary-item-wrapper  {
       display: flex;
       justify-content: center;
+      flex-direction: column;
       background: radial-gradient(ellipse at center, rgba(29,38,41,1) 0%,rgba(29,38,41,0) 90%);
+
+      @media screen and (min-width: 768px) {
+        flex-direction: row;
+      }
 
       .summary-content {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         padding-left: 15px;
+
+        @media screen and (max-width: 767px) {
+          padding-left: 0;
+
+          * {
+            text-align: center !important;
+          }
+        }
 
         .summary-excerpt {
           text-align: right;
@@ -71,6 +94,12 @@
 
       .summary-thumbnail-outer-container {
         flex: 0 0 55%;
+
+        @media screen and (max-width: 767px) {
+          padding: 0;
+          max-width: 70%;
+          margin: 0 auto;
+        }
 
         .sqs-gallery-image-container {
           border: none;
